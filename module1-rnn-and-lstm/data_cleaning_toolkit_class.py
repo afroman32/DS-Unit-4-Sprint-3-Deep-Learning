@@ -48,7 +48,7 @@ class data_cleaning_toolkit(object):
         # apply case normalization 
         return doc.lower()   
     
-    def create_char_sequenes(self, data, maxlen = 20, step = 5):
+    def create_char_sequences(self, data, maxlen = 20, step = 5):
         """
         Creates numerically encoded text sequences for model input and encoded chars 
         for what the model should predict next. 
@@ -93,6 +93,7 @@ class data_cleaning_toolkit(object):
 
         # Unique Characters
         chars = list(set(text))
+        self.unique_chars = chars
         
         # our text gen model will treat every unique char as a possible feature to predict
         self.n_features = len(chars)
